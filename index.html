@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Wave Player - Cyber-Deck MD-80s</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fuente estilo Pixel Art / Retro -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="main-title">RETRO WAVE PLAYER</div>
+
+  <div class="player-container">
+    <!-- Encabezado del dispositivo -->
+    <div class="deck-header">
+      <span class="deck-model">CYBER-DECK MD-80s</span>
+      <div class="indicators">
+        <span class="badge active">STEREO</span>
+        <span class="badge pink">DOLBY</span>
+        <div class="vu-meter">
+          <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+          <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+      </div>
+      <div class="volume-control">
+        <label for="volume">VOL</label>
+        <input type="range" id="volume" min="0" max="1" step="0.01" value="0.8">
+      </div>
+    </div>
+
+    <!-- Sección de la Casete -->
+    <div class="cassette-deck">
+      <div class="cassette">
+        <div class="cassette-label">CYBER SYMPHONY</div>
+        <div class="reels">
+          <div class="reel" id="reel-left"></div>
+          <div class="tape-window"></div>
+          <div class="reel" id="reel-right"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Información de la pista actual y Ecualizador -->
+    <div class="track-info">
+      <div class="meta">
+        <h2 id="song-title">CYBER SYMPHONY</h2>
+        <p id="artist-name">NEON ARCADE</p>
+        <div class="total-duration" id="total-duration">00:00</div>
+      </div>
+      <div class="visualizer">
+        <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+        <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+        <div class="eq-bar"></div><div class="eq-bar"></div>
+        <div class="time-display" id="time-display">00:00 / 00:00</div>
+      </div>
+    </div>
+
+    <!-- Barra de progreso -->
+    <div class="progress-container">
+      <input type="range" id="progress-bar" value="0" min="0" max="100">
+    </div>
+
+    <!-- Botones de Control -->
+    <div class="controls">
+      <button class="btn" id="btn-prev">
+        <span class="icon">⏮</span>
+        <span class="label">PREV</span>
+      </button>
+      <button class="btn btn-main" id="btn-play">
+        <span class="icon" id="play-icon">▶❚❚</span>
+        <span class="label">PLAY/PAUSE</span>
+      </button>
+      <button class="btn" id="btn-stop">
+        <span class="icon">⏹</span>
+        <span class="label">STOP</span>
+      </button>
+      <button class="btn" id="btn-next">
+        <span class="icon">⏭</span>
+        <span class="label">NEXT</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Elemento de audio invisible -->
+  <audio id="audio-player"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
