@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P', monospace;
+}
+
+body {
+  background: linear-gradient(180deg, #050014 0%, #1a0033 50%, #2d004d 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.main-title {
+  color: #00f0ff;
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+}
+
+/* Contenedor Principal del Reproductor */
+.player-container {
+  background: #12131a;
+  border: 4px solid #ff007f;
+  border-radius: 12px;
+  padding: 25px;
+  width: 100%;
+  max-width: 650px;
+  box-shadow: 0 0 25px rgba(255, 0, 127, 0.4), inset 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+/* Header */
+.deck-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #2a2c3d;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  font-size: 0.6rem;
+}
+
+.deck-model {
+  color: #a0a5c0;
+}
+
+.indicators {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.badge {
+  padding: 4px 6px;
+  border: 1px solid #00f0ff;
+  color: #00f0ff;
+  border-radius: 3px;
+}
+
+.badge.pink {
+  border-color: #ff007f;
+  color: #ff007f;
+}
+
+.vu-meter {
+  display: flex;
+  gap: 3px;
+}
+
+.vu-meter .bar {
+  width: 6px;
+  height: 12px;
+  background: #00f0ff;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ff007f;
+}
+
+.volume-control input {
+  width: 60px;
+  accent-color: #ff007f;
+}
+
+/* Casete */
+.cassette-deck {
+  background: #090a0f;
+  border: 3px solid #2a2c3d;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cassette {
+  background: linear-gradient(135deg, #1f2233 0%, #11121c 100%);
+  border: 2px solid #00f0ff;
+  border-radius: 8px;
+  width: 280px;
+  height: 150px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.cassette-label {
+  background: linear-gradient(90deg, #ff007f, #00f0ff);
+  color: #000;
+  text-align: center;
+  padding: 6px;
+  font-size: 0.6rem;
+  font-weight: bold;
+}
+
+.reels {
+  background: #050508;
+  border: 1px solid #333;
+  height: 65px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 15px;
+}
+
+.reel {
+  width: 40px;
+  height: 40px;
+  border: 4px dashed #00f0ff;
+  border-radius: 50%;
+  background: #111;
+}
+
+/* Animación de giro para la casete */
+.spinning {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.tape-window {
+  width: 80px;
+  height: 15px;
+  background: #222;
+  border: 1px solid #444;
+}
+
+/* Información de la pista */
+.track-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 15px;
+}
+
+.meta h2 {
+  color: #ff007f;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+  text-shadow: 0 0 5px #ff007f;
+}
+
+.meta p {
+  color: #00f0ff;
+  font-size: 0.6rem;
+  margin-bottom: 8px;
+}
+
+.total-duration {
+  color: #00f0ff;
+  font-size: 0.9rem;
+}
+
+.visualizer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.eq-bar {
+  display: inline-block;
+  width: 4px;
+  height: 15px;
+  background: #ff007f;
+}
+
+.time-display {
+  font-size: 0.55rem;
+  color: #a0a5c0;
+  margin-top: 5px;
+}
+
+/* Barra de Progreso */
+.progress-container {
+  margin-bottom: 25px;
+}
+
+.progress-container input {
+  width: 100%;
+  accent-color: #00f0ff;
+  cursor: pointer;
+}
+
+/* Controles / Botones */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn {
+  background: #1a1c29;
+  border: 2px solid #00f0ff;
+  color: #00f0ff;
+  padding: 12px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: #00f0ff;
+  color: #000;
+  box-shadow: 0 0 10px #00f0ff;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-main {
+  border-color: #ff007f;
+  color: #ff007f;
+}
+
+.btn-main:hover {
+  background: #ff007f;
+  color: #000;
+  box-shadow: 0 0 10px #ff007f;
+}
+
+.btn .icon {
+  font-size: 0.9rem;
+}
+
+.btn .label {
+  font-size: 0.45rem;
+}
